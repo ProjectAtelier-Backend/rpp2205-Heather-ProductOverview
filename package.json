@@ -1,0 +1,24 @@
+{
+  "name": "rpp2205-heather-productoverview",
+  "version": "1.0.0",
+  "description": "Product Overview Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpp2205-sdc-mojave/rpp2205-Heather-ProductOverview.git"
+  },
+  "author": "bubsinthemountains",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpp2205-sdc-mojave/rpp2205-Heather-ProductOverview/issues"
+  },
+  "homepage": "https://github.com/rpp2205-sdc-mojave/rpp2205-Heather-ProductOverview#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jest": "^29.3.1"
+  }
+}
