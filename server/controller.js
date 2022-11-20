@@ -30,7 +30,12 @@ module.exports = {
   },
 
   getStyles: function(req, res) {
-
+    const id = req.params.product_id;
+    readStyles(id)
+      .then((results) => {
+        res.send(results);
+      })
+      .catch(err => console.log(err))
   }
 
 }
