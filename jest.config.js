@@ -1,9 +1,15 @@
 module.exports = {
-  roots: ['./test'],
-  testMatch: ['**/*.test.(js|jsx)'],
-  transform: {
-    '^.+\\.(js|jsx)?$': 'babel-jest'
-  },
-  moduleFileExtensions: ['jsx', 'js', 'json'],
-  moduleDirectories: ['node_modules', 'src']
-};
+  collectCoverage: true,
+  collectCoverageFrom: [
+
+    "<rootDir>/db/*.{js,jsx,ts,tsx}",
+    "<rootDir>/server/*.{js,jsx,ts,tsx}",
+    "<rootDir>/test/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/node_modules/",
+    "!<rootDir>/coverage/",
+    "!<rootDir>/package-lock.json/",
+    "!<rootDir>/package.json/",
+    "!<rootDir>/README.md/"
+  ],
+
+}
