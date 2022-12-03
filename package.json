@@ -4,7 +4,7 @@
   "description": "Product Overview Service",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage ",
+    "test": "NODE_ENV=test jest --forceExit",
     "start": "nodemon ./server/index.js"
   },
   "repository": {
