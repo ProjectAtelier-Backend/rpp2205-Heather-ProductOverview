@@ -21,8 +21,6 @@ module.exports = {
   },
   readInfo: function (id) {
     const query = `
-    SELECT row_to_json(t)
-    FROM (
       SELECT p.*,
       (
         SELECT array_to_json(array_agg(row_to_json(d)))
@@ -33,15 +31,14 @@ module.exports = {
         ) d
       ) as features
     FROM products p
-    WHERE p.id = ${id}
-    ) t`;
+    WHERE p.id = ${id}`;
     return pool.connect()
       .then((client) => {
         return client
           .query(query)
           .then((res) => {
             client.release()
-            return res.rows[0].row_to_json;
+            return res.rows[0];
           })
           .catch((err) => {
             client.release()
@@ -73,8 +70,6 @@ module.exports = {
 
   readStyles: function(id) {
     const query = `
-    SELECT row_to_json(z)
-    FROM (
       SELECT p.id AS product_id, (
         SELECT array_agg(row_to_json(y))
         FROM
@@ -100,7 +95,7 @@ module.exports = {
         WHERE s.product_id = p.id ) y
       ) AS results
       FROM products p
-      WHERE p.id = ${id} ) z`
+      WHERE p.id = ${id}`
 
     return pool.connect()
       .then((client) => {
@@ -108,7 +103,7 @@ module.exports = {
           .query(query)
           .then((res) => {
             client.release()
-            return res.rows[0].row_to_json;
+            return res.rows[0];
           })
           .catch((err) => {
             client.release()
