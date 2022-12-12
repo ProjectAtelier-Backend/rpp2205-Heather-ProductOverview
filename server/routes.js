@@ -9,4 +9,6 @@ router.get("/:product_id/related", getRelated);
 
 router.get("/:product_id/styles", getStyles);
 
+
+
 module.exports = router;

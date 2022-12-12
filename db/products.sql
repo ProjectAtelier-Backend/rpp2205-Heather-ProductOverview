@@ -42,3 +42,21 @@ CREATE TABLE IF NOT EXISTS skus (
   quantity INTEGER,
   CONSTRAINT fk_skus FOREIGN KEY(style_id) REFERENCES styles(id)
 );
+
+-- \copy products FROM '/var/lib/postgresql/data/product.csv' DELIMITER ',' CSV HEADER
+
+-- \copy related FROM '/var/lib/postgresql/data/related.csv' DELIMITER ',' CSV HEADER
+
+-- \copy features FROM '/var/lib/postgresql/data/features.csv' DELIMITER ',' CSV HEADER
+
+-- \copy styles FROM '/var/lib/postgresql/data/styles.csv' DELIMITER ',' CSV HEADER
+
+-- \copy photos FROM '/var/lib/postgresql/data/photos.csv' DELIMITER ',' CSV HEADER
+
+-- \copy skus FROM '/var/lib/postgresql/data/skus.csv' DELIMITER ',' CSV HEADER
+
+-- CREATE INDEX features_pid_idx ON features (product_id);
+-- CREATE INDEX related_pid_idx ON related (product_id);
+-- CREATE INDEX photos_sid_idx ON photos (style_id);
+-- CREATE INDEX skus_sid_idx ON skus (style_id);
+-- CREATE INDEX styles_pid_idx ON styles (product_id);

@@ -1,15 +1,15 @@
-FROM node:18-alpine
+FROM --platform=linux/amd64 node:18-alpine
 
 RUN npm install --global nodemon
 
-WORKDIR /productOverview-api
+WORKDIR /rpp2205-Heather-productOverview
 
 EXPOSE 3001
 
-COPY package.json /productOverview-api/package.json
+COPY package.json /rpp2205-Heather-productOverview/package.json
 
 RUN npm install
 
-COPY . /product-api
+COPY . /rpp2205-Heather-productOverview
 
 CMD ["npm", "start"]

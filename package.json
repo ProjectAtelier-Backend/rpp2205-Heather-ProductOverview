@@ -2,7 +2,7 @@
   "name": "rpp2205-heather-productoverview",
   "version": "1.0.0",
   "description": "Product Overview Service",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
     "test": "NODE_ENV=test jest --forceExit",
     "start": "nodemon ./server/index.js",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/rpp2205-sdc-mojave/rpp2205-Heather-ProductOverview#readme",
   "dependencies": {
+    "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "newrelic": "^9.7.0",

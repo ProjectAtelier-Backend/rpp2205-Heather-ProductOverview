@@ -1,11 +1,13 @@
 services:
   server:
+    platform: linux/amd64
     build: .
     container_name: server
     ports:
       - "3001:3001"
 
   db:
+    platform: linux/amd64
     image: postgres
     container_name: db
     restart: always
