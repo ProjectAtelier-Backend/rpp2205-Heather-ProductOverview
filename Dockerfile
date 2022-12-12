@@ -1,5 +1,7 @@
 FROM node:18-alpine
 
+RUN npm install --global nodemon
+
 WORKDIR /productOverview-api
 
 EXPOSE 3001
