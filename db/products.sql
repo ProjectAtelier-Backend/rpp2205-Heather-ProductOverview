@@ -23,8 +23,8 @@ CREATE TABLE IF NOT EXISTS styles (
   id INTEGER PRIMARY KEY,
   product_id INTEGER,
   name TEXT,
-  original_price INTEGER,
-  sale_price INTEGER,
+  original_price TEXT,
+  sale_price TEXT,
   default_style BOOLEAN,
   CONSTRAINT fk_styles FOREIGN KEY(product_id) REFERENCES products(id)
 );
